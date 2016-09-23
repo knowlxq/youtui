@@ -6,7 +6,6 @@ window.onload=function(){
 	youtui.app.navhover();
 	youtui.app.getText();
 	youtui.app.onMove();
-	youtui.app.toBanner();
 }
 function loadImages(sources, callback){  
     var count = 0,  
