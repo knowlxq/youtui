@@ -11,18 +11,16 @@ window.onload=function(){
 function loadImages(sources, callback){  
     var count = 0,  
         images ={},  
-        imgNum = 0;  
-    for(src in sources){  
-        imgNum++;  
-    }  
-    for(src in sources){  
-        images[src] = new Image();  
-        images[src].onload = function(){  
+        imgNum =sources.length;  
+     
+    for(var i=0;i<imgNum;i++){  
+        images[i] = new Image();  
+        images[i].onload = function(){  
             if(++count >= imgNum){  
                 callback(images);  
             }  
-        }  
-        images[src].src = sources[src];  
+        }
+        images[i].src = sources[i];  
     }  
 }  
 var youtui={};
@@ -162,8 +160,8 @@ youtui.app.onMove=function(){
 			aLi[j].onmouseout=function(){
 				var oUp=youtui.tools.getByClass(this,'up')[0];
 				var oUptext=youtui.tools.getByClass(this,'uptext')[0];
-				youtui.tools.doMove(oUp,20,250,'top');
-				youtui.tools.doMove(oUptext,20,250,'top');
+				youtui.tools.doMove(oUp,20,217,'top');
+				youtui.tools.doMove(oUptext,20,217,'top');
 			}
 		};
 	};
@@ -194,6 +192,7 @@ youtui.app.toBanner=function(){
 		clearInterval(this.timer);
 	}
 	oPicTab.onmouseout=function(){
+		clearInterval(this.timer);
 		this.timer=setInterval(move,3000);
 	}
 	for (var i = 0; i < aA.length; i++) {
