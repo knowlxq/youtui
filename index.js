@@ -7,20 +7,24 @@ window.onload=function(){
 	youtui.app.getText();
 	youtui.app.onMove();
 }
+
 function loadImages(sources, callback){  
     var count = 0,  
         images ={},  
-        imgNum = sources.length;  
-    for (var i = 0; i < sources.length; i++) {
-    	images[i]=new Image();
-    	images[i].onload=function(){
-    		if (++count>imgNum) {
-    			callback();
-    		};
-    	}
-    	images[i].src=sources[i];
-    }; 
-}
+        imgNum = 0;  
+    for(src in sources){  
+        imgNum++;  
+    }  
+    for(src in sources){  
+        images[src] = new Image();  
+        images[src].onload = function(){  
+            if(++count >= imgNum){  
+                callback(images);  
+            }  
+        }  
+        images[src].src = sources[src];  
+    }  
+}  
 var youtui={};
 youtui.tools={};
 youtui.tools.getByClass=function(oParent,className){
