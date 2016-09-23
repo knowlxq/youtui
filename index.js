@@ -1,10 +1,23 @@
 window.onload=function(){
+	preloadedImages();
 	youtui.app.login();
 	youtui.app.gosearch();
 	youtui.app.navhover();
 	youtui.app.getText();
 	youtui.app.onMove();
 	youtui.app.toBanner();
+}
+function preloadedImages() 
+{ 
+heavyImage = new Image();
+heavyImage[0] = "img/PicTab/0.jpg";
+heavyImage[1] = "img/PicTab/1.jpg";
+heavyImage[2] = "img/PicTab/2.jpg";
+heavyImage[3] = "img/PicTab/3.jpg";
+heavyImage[4] = "img/PicTab/4.jpg";
+heavyImage[5] = "img/PicTab/5.jpg";
+heavyImage[6] = "img/PicTab/6.jpg";
+heavyImage[7] = "img/PicTab/7.jpg";
 }
 var youtui={};
 youtui.tools={};
