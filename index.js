@@ -1,5 +1,6 @@
 window.onload=function(){
-	preloadedImages();
+	var sources=['img/PicTab/0.jpg','img/PicTab/1.jpg','img/PicTab/2.jpg','img/PicTab/3.jpg','img/PicTab/4.jpg','img/PicTab/5.jpg','img/PicTab/6.jpg','img/PicTab/7.jpg'];
+	loadImages(sources,youtui.app.toBanner);
 	youtui.app.login();
 	youtui.app.gosearch();
 	youtui.app.navhover();
@@ -7,17 +8,19 @@ window.onload=function(){
 	youtui.app.onMove();
 	youtui.app.toBanner();
 }
-function preloadedImages() 
-{ 
-heavyImage = new Image();
-heavyImage[0] = "img/PicTab/0.jpg";
-heavyImage[1] = "img/PicTab/1.jpg";
-heavyImage[2] = "img/PicTab/2.jpg";
-heavyImage[3] = "img/PicTab/3.jpg";
-heavyImage[4] = "img/PicTab/4.jpg";
-heavyImage[5] = "img/PicTab/5.jpg";
-heavyImage[6] = "img/PicTab/6.jpg";
-heavyImage[7] = "img/PicTab/7.jpg";
+function loadImages(sources, callback){  
+    var count = 0,  
+        images ={},  
+        imgNum = sources.length;  
+    for (var i = 0; i < sources.length; i++) {
+    	images[i]=new Image();
+    	images[i].onload=function(){
+    		if (++count>imgNum) {
+    			callback();
+    		};
+    	}
+    	images[i].src=sources[i];
+    }; 
 }
 var youtui={};
 youtui.tools={};
