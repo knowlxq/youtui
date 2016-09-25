@@ -19,7 +19,7 @@ body{background:#9cc5de;}
 .top_login form{float:left;height:40px;color:#fff;display: none;}
 .top_login input{background:none;border:1px solid #fff;color:#fff;border-radius:5px;outline:none;line-height:25px;}
 
-#header{height:170px;background:#2c6a95;margin-top:-42px;min-width:1160px;}
+#header{height:170px;background:url(img/header.png) no-repeat center center;margin-top:-42px;min-width:1160px;}
 #nav{height:70px;width:1165px;margin:0 auto;}
 #nav ul{padding:4px;height:60px;}
 #nav li{width:105px;height:60px;background:url(img/nav.png);float:left;position:relative;}
